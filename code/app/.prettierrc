@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json.schemastore.org/prettierrc",
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "arrowParens": "avoid",
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "semi": false,
+  "proseWrap": "always",
+  "singleAttributePerLine": true,
+  "overrides": [
+    {
+      "files": "**/*.test.jsx",
+      "options": {
+        "parser": "babel"
+      }
+    }
+  ]
+}

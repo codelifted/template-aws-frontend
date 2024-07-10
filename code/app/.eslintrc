@@ -1,0 +1,84 @@
+{
+  "plugins": ["prettier", "@typescript-eslint", "simple-import-sort"],
+  "extends": ["react-app", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "no-param-reassign": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/order": "off",
+    "no-console": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "import/no-cycle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        "$schema": "http://json.schemastore.org/prettierrc",
+        "bracketSpacing": true,
+        "bracketSameLine": true,
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "arrowParens": "avoid",
+        "tabWidth": 2,
+        "endOfLine": "lf",
+        "semi": false,
+        "proseWrap": "always",
+        "singleAttributePerLine": true,
+        "overrides": [
+          {
+            "files": "**/*.test.jsx",
+            "options": {
+              "parser": "babel"
+            }
+          }
+        ]
+      }
+    ],
+    "simple-import-sort/imports": ["warn", {
+      "groups": [
+        ["^react", "^@tanstack/react-query"],
+        ["^@mui/material", "^@mui", "^components"],
+        ["^@?\\w", "@/(.*)", "^", "^[./]"],
+        ["^types"],
+        ["^.*icon.*$", "^@ant-design/icons"],
+        ["^.+\\.s?css$"]
+      ]
+    }]
+  }
+}
